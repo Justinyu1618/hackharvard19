@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
 	StyleSheet,
 	Text,
+	TextInput,
 	View,
 	Dimensions,
 	TouchableOpacity
@@ -10,7 +11,7 @@ import Icon from 'react-native-vector-icons';
 
 const { width: WIDTH } = Dimensions.get('window');
 
-export default function App() {
+App = () => {
 	[username, setUsername] = useState('');
 	[password, setPassword] = useState('');
 
@@ -26,7 +27,7 @@ export default function App() {
 					name={'ios-person-outline'}
 					size={28}
 					color={'black'}
-					style={inputIcon}
+					style={styles.inputIcon}
 				/>
 				<TextInput
 					style={styles.input}
@@ -43,7 +44,7 @@ export default function App() {
 					name={'ios-lock-outline'}
 					size={28}
 					color={'black'}
-					style={inputIcon}
+					style={styles.inputIcon}
 				/>
 				<TextInput
 					style={styles.input}
@@ -61,7 +62,7 @@ export default function App() {
 			</TouchableOpacity>
 		</View>
 	);
-}
+};
 
 const styles = StyleSheet.create({
 	container: {
@@ -117,3 +118,5 @@ const styles = StyleSheet.create({
 		textAlign: 'center'
 	}
 });
+
+export default App;
