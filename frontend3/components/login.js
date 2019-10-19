@@ -11,6 +11,10 @@ export default class Login extends Component {
 
   }
 
+  toHome(){
+    this.props.navigation.navigate({routeName: "Home"});
+  }
+
   render() {
       return (
         <View style={styles.mainback}>
@@ -30,13 +34,13 @@ export default class Login extends Component {
 
           <View style={styles.signwith}>
 
-          <TouchableOpacity activeOpacity={1} style={{...styles.syncbtn, backgroundColor: "white"}}>
+          <TouchableOpacity onPress={this.toHome.bind(this)} activeOpacity={1} style={{...styles.syncbtn, backgroundColor: "white"}}>
             <Image style={styles.syncimg} source={require('../components/glogo.png')}/>
             <Text style={{...styles.synctext, color: "rgba(0,0,0,0.3)"}}>Sign in with Google</Text>
           </TouchableOpacity>
 
 
-          <TouchableOpacity activeOpacity={1} style={{...styles.syncbtn, backgroundColor: "white", marginTop: 40}}>
+          <TouchableOpacity onPress={this.toHome.bind(this)} activeOpacity={1} style={{...styles.syncbtn, backgroundColor: "white", marginTop: 40}}>
             <Image style={{...styles.syncimg, width: 3456*0.0098, height: 3960*0.0098, marginLeft: -15, opacity: 0.8}} source={require('../components/applg.png')}/>
             <Text style={{...styles.synctext, color: "rgba(0,0,0,0.3)"}}>Sign in with Apple</Text>
           </TouchableOpacity>
