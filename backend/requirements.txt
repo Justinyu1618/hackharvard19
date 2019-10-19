@@ -1,0 +1,11 @@
+flask
+flask_sqlalchemy
+flask-bcrypt
+sqlalchemy
+psycopg2
+flask_cors
+flask-jwt-extended
+requests
+pytz
+tzlocal
+scipy
