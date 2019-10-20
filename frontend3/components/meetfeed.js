@@ -15,6 +15,8 @@ export default class MeetFeed extends Component {
     return (
       <View style={styles.container}>
 
+      <Text style={styles.toptext}>Conversations around you...</Text>
+
       <FlatList
           style={styles.fltlist}
 
@@ -94,6 +96,12 @@ const styles = StyleSheet.create({
     height: 15,
     marginLeft: 7.5,
     opacity: 0.5,
+  },
+
+  toptext: {
+    fontSize: 30,
+    marginTop: 100,
+    opacity: 0.7,
 
   },
 
