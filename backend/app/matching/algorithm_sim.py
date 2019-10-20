@@ -80,6 +80,7 @@ score_y = [sum(i) for i in zip(*compare_y)]
 score_z = [sum(i) for i in zip(*compare_z)]
 
 # Average
+# Must take the average as n of example may vary in real cases
 score_x = score_x[0] / num
 score_y = score_y[0] / num
 score_z = score_z[0] / num
