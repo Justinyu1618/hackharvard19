@@ -56,16 +56,9 @@ def current_user():
 	print(get_jwt_identity())
 	return jsonify(user.serialize()), 200
 
-@user_bp.route('/get_users', methods=['GET'])
-@jwt_required
+@user_bp.route('/get_all_users', methods=['GET'])
+# @jwt_required
 def get_users():
 	users = User.query.all()
-	users_dicts = []
-	for u in users:
-		d = u.serialize()
-		d["last_graded"] = sorted([s.timestamp for s in u.scores], reverse=True)[0] if u.scores else None
-		users_dicts.append(d)
-	users_dicts = sorted(users_dicts, key=lambda x: x["name"])
-	users_dicts = sorted(users_dicts, key=lambda x: int(x["confirmed"]==True), reverse=True)
+	return jsonify(users.serialize())
 
-	return jsonify(users_dicts), 200
