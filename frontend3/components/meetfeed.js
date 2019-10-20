@@ -15,7 +15,15 @@ export default class MeetFeed extends Component {
     return (
       <View style={styles.container}>
 
-      <Text style={styles.toptext}>Conversations around you...</Text>
+      <View style={{display: "flex", flexDirection: "row"}}>
+      <View style={{    borderBottomWidth: 2, borderBottomColor: "rgb(111, 217, 174)"}}><Text style={styles.toptextdrop}>Conversations</Text></View><Text style={styles.toptext}> around you...</Text>
+      </View>
+
+      <View style={{display: "flex", flexDirection: "row", justifyContent: "center"}}>
+
+        <Image style={styles.hlp} source={require('./help.png')}/>
+
+      </View>
 
       <FlatList
           style={styles.fltlist}
@@ -83,6 +91,8 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
+    borderColor: "rgba(146, 232, 198, 0.2)",
+    borderWidth: 1,
   },
 
   titem: {
@@ -100,8 +110,24 @@ const styles = StyleSheet.create({
 
   toptext: {
     fontSize: 30,
-    marginTop: 100,
+    marginTop: 80,
     opacity: 0.7,
+  },
+
+  toptextdrop: {
+    fontSize: 30,
+    marginTop: 80,
+    opacity: 0.7,
+
+  },
+
+  hlp: {
+    width: 100,
+    height: 100,
+    marginTop: 40,
+    marginBottom: -20,
+    opacity: 0.8,
+    display: "none",
 
   },
 
