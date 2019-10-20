@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "854756214461",
+    "firebase_url": "https://hackharvard19.firebaseio.com",
+    "project_id": "hackharvard19",
+    "storage_bucket": "hackharvard19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:854756214461:android:ceb61c4770e5ba161999d4",
+        "android_client_info": {
+          "package_name": "hackharvard19.bump.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "854756214461-63nh1540qeolcl1kpmh92irl6sr2i2st.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4y8_RQXH27IqIdq8agVA44VDhkSmYbSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "854756214461-63nh1540qeolcl1kpmh92irl6sr2i2st.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

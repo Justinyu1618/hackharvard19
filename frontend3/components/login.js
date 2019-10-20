@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {AppRegistry, Keyboard, Text, View, ReactBox, StyleSheet, Image, TouchableWithoutFeedback, TextInput, TouchableOpacity, ImageBackground, PushNotificationIOS, Alert, Platform, Dimensions, Geolocation, Animated} from 'react-native'
-
+// import { GoogleSignin } from 'react-native-google-signin';
+import firebase from 'react-native-firebase'
 import { LinearGradient } from 'expo-linear-gradient';
 
 const {width, height} = Dimensions.get('window');

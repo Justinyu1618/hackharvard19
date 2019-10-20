@@ -11,6 +11,18 @@ import MeetFeed from './components/meetfeed';
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator} from 'react-navigation-stack';
 
+import * as firebase from "firebase/app"
+var config = {
+  apiKey: "AIzaSyAChx2G-bxQm4SBXcEel0pk6_E_S382ypQ",
+  authDomain: "hackharvard19.firebaseapp.com",
+  // databaseURL: "https://databaseName.firebaseio.com",
+  // storageBucket: "bucket.appspot.com"
+};
+firebase.initializeApp(config);
+
+// Get a reference to the database service
+var database = firebase.database();
+
 
 global.token = "";
 
@@ -23,7 +35,7 @@ header: null,
 
 const AppNavigator = createStackNavigator({
   Login: {
-    screen: MeetFeed,
+    screen: Login,
     navigationOptions: navigationOptions,
   },
   Home: {

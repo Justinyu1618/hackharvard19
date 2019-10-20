@@ -30,7 +30,7 @@ export default class MeetFeed extends Component {
 
           data={[
             {key: 'Soccer'},
-            {key: 'Affirmative Action'},
+            {key: 'RIP'},
             {key: 'iOS 13'},
             {key: 'Parenting 😩'},
             {key: 'Books'},

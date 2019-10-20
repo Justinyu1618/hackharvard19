@@ -24,7 +24,17 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "hackharvard19.bump.ios",
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "com.googleusercontent.apps.854756214461-ridpfgdqpkog52dhvfdrevv3u0b4kbfu"
+        }
+      }
+    },
+    "android": {
+      "package": "hackharvard19.bump.android",
+      "googleServicesFile": "./google-services.json"
     }
   }
 }
