@@ -1,0 +1,7 @@
+runtime: python37
+
+entrypoint: python run.py
+
+handlers:
+- url: /.*
+  script: auto

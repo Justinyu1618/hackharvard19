@@ -60,5 +60,5 @@ def current_user():
 # @jwt_required
 def get_users():
 	users = User.query.all()
-	return jsonify(users.serialize())
+	return jsonify([u.serialize() for u in users])
 
