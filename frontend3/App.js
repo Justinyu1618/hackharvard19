@@ -4,11 +4,14 @@ import AddPage from './components/addpage';
 import Rings from './components/rings';
 import Profile from './components/profile';
 import Login from './components/login';
+import Main from './components/main';
+import Posts from './components/posts';
 
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator} from 'react-navigation-stack';
 
 
+global.token = "";
 
 global.allCircles = [];
 
@@ -24,6 +27,14 @@ const AppNavigator = createStackNavigator({
   },
   Home: {
     screen: Rings,
+    navigationOptions: navigationOptions,
+  },
+  Main: {
+    screen: Main,
+    navigationOptions: navigationOptions,
+  },
+  Posts: {
+    screen: Posts,
     navigationOptions: navigationOptions,
   },
   UserPage: {

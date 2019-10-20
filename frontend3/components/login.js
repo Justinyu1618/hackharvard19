@@ -12,7 +12,7 @@ export default class Login extends Component {
   }
 
   toHome(){
-    this.props.navigation.navigate({routeName: "Home"});
+    this.props.navigation.navigate({routeName: "Main"});
   }
 
   render() {
