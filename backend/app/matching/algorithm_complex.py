@@ -90,11 +90,8 @@ print()
 vec_a = []
 for element in a:
     for token in element:
-        # if len(element) > 1:
-        #     if token.pos_ not in noise_tag:
-        #         vec_a.extend(element[0] + element[1])
-        # else:
-            vec_a.extend(token.vector)
+            if token.pos_ not in noise_tag:
+                vec_a.extend(token.vector)
 
 vec_x = []
 for element in x:
