@@ -22,7 +22,7 @@ header: null,
 
 const AppNavigator = createStackNavigator({
   Login: {
-    screen: Login,
+    screen: Main,
     navigationOptions: navigationOptions,
   },
   Home: {

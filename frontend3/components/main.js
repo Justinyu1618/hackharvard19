@@ -49,7 +49,9 @@ export default class Profile extends Component {
           <Text style={styles.wname}>Justin Andrew</Text>
           <View style={styles.lowbar}></View>
           <View style={{...styles.todayiwant, marginTop: 60}}>
+            <View style={styles.addnew}>
 
+            </View>
           </View>
 
 
@@ -80,8 +82,9 @@ const styles = StyleSheet.create({
   lowbar: {
     width: "100%",
     height: 5,
-    backgroundColor: "rgba(111, 217, 174,0.1)",
+    backgroundColor: "rgba(111, 217, 174,0.2)",
     marginTop: 42.5,
+    borderRadius: 10,
 
   },
 
@@ -304,6 +307,16 @@ const styles = StyleSheet.create({
     color: "white",
     fontSize: 17,
     marginLeft: 25,
+  },
+
+  addnew: {
+    width: "80%",
+    marginLeft: "10%",
+    height: 55,
+    backgroundColor: "rgba(0,0,0,0.025)",
+    borderRadius: 15,
+    position: "absolute",
+    bottom: 42.5,
 
   },
 

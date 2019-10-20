@@ -175,6 +175,11 @@ export default class Rings extends Component {
           <Text style={styles.biopush}>Born and raised in South Bend, Indiana. Big fan of fishing, eating, and making new friends!</Text>
         </View>
 
+
+        <View style={styles.shareoptions}>
+
+        </View>
+
       </View>
     </View>
     </FlingGestureHandler>
