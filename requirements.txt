@@ -9,6 +9,7 @@ Flask-Login==0.4.1
 Flask-SQLAlchemy==2.3.2
 Flask-SSLify==0.1.5
 future==0.17.1
+psycopg2
 oauthlib==3.1.0
 optional-django==0.1.0
 requests==2.20.1
