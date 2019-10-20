@@ -1,6 +1,11 @@
 # Matching algorithm for Bump
 # spaCy v2.2.0 · Python 3
 #
+# Before running the program:
+# pip3 install -U spacy
+# python3 -m spacy download en_core_web_md
+#
+# If pip install fails, pip uninstall and try conda install
 #
 
 
@@ -99,6 +104,3 @@ print()
 #print(score_x, score_y, score_z)
 
 print("Expectation: x = no match, y = weak match, z = perfect match")
-
-
-# Compare
