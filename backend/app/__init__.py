@@ -37,7 +37,7 @@ def create_app():
 
 	#load database
 	db = SQLAlchemy(application)
-	from app.models import User, Round, Applicant, Score, SkippedApplicant
+	from app.models import User, Match
 
 	#confgure JWT auth
 	jwt = JWTManager(application)
@@ -48,9 +48,9 @@ def create_app():
 
 	#register module blueprints
 	from app.user.views import user_bp
-	from app.user.views import matchin_bp
+	from app.matching.views import match_bp
 	application.register_blueprint(user_bp)
-	application.register_blueprint(matchin_bp)
+	application.register_blueprint(match_bp)
 
 
 	

@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from app import db
 from flask_sqlalchemy import SQLAlchemy
-# from app.models import User
+from app.models import User
 from flask_jwt_extended import jwt_required, create_access_token, get_jwt_identity
 from datetime import timedelta
 import sqlalchemy
@@ -19,7 +19,8 @@ def new_user():
 		db.session.commit()
 	except sqlalchemy.exc.IntegrityError as e:
 		db.session.rollback()
-		return jsonify(message="Email already exists", success=False),200
+		print(f"In new_user: {e}")
+		return jsonify(message="New User Creation Failed", success=False), 200
 	return jsonify(message="New User Created!", success=True), 200
 
 @user_bp.route('/login', methods=['POST'])
@@ -38,6 +39,15 @@ def login():
 	access_token = create_access_token(identity=user.id, expires_delta=timedelta(days=3))
 	return jsonify(access_token=access_token, admin=user.admin, success=True), 200
 
+@user_bp.route('/update', methods=['POST'])
+# @jwt_required
+def update():
+	print(request.get_json())
+	resp = request.get_json()
+	user = User.query.filter(User.id==int(resp['user'])).first()
+	print(user)
+	user.populate(resp['data'])
+	return jsonify(user.serialize()), 200
 
 @user_bp.route('/current_user', methods=['GET'])
 @jwt_required
