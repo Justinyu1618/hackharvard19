@@ -6,6 +6,7 @@ import Profile from './components/profile';
 import Login from './components/login';
 import Main from './components/main';
 import Posts from './components/posts';
+import MeetFeed from './components/meetfeed';
 
 import { createAppContainer } from 'react-navigation';
 import { createStackNavigator} from 'react-navigation-stack';
@@ -22,7 +23,7 @@ header: null,
 
 const AppNavigator = createStackNavigator({
   Login: {
-    screen: Main,
+    screen: MeetFeed,
     navigationOptions: navigationOptions,
   },
   Home: {
