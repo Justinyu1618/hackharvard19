@@ -28,7 +28,6 @@ z = [nlp(u'football'), nlp(u'study'), nlp(u'computers')]
 
 
 
-
 # Calculate cosine distance and compare
 
 #Individual vectors
