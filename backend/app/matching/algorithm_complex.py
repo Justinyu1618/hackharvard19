@@ -32,10 +32,11 @@ alles = [a, x, y, z]
 
 # Part-of-speech (POS) Tagging
 # Determinds the part of speech of each token / word inputted by the user
-ent_a = [[token.pos_ for token in element] for element in a]
-ent_x = [[token.pos_ for token in element] for element in x]
-ent_y = [[token.pos_ for token in element] for element in y]
-ent_z = [[token.pos_ for token in element] for element in z]
+noise_tag = ["PROP", "ADP", "DET"]
+ent_a = [[token.pos_ for token in element if token.pos_ not in noise_tag] for element in a]
+ent_x = [[token.pos_ for token in element if token.pos_ not in noise_tag] for element in x]
+ent_y = [[token.pos_ for token in element if token.pos_ not in noise_tag] for element in y]
+ent_z = [[token.pos_ for token in element if token.pos_ not in noise_tag] for element in z]
 
 entries = [ent_a, ent_x, ent_y, ent_z]
 print(entries)
@@ -46,16 +47,16 @@ print()
 # Clean Data:
 
 # Define some parameters  
-noise_tag = ["PROP", "ADP", "DET"]
-vec = []
 
-for element in a:
-    for token in element:
-        if token.pos_ in noise_tag:
-            print("hi")
-        else:
-             v_a = [[token.vector for token in element] for element in a]
-print(v_a)
+# vec = []
+
+# for element in a:
+#     for token in element:
+#         if token.pos_ in noise_tag:
+#             print("hi")
+#         else:
+#              v_a = [[token.vector for token in element] for element in a]
+# print(v_a)
             
 
 
@@ -104,7 +105,7 @@ print(v_a)
 
 
 
-
+# # Arbitrary weights
 # noun = 1
 # verb = 0.3
 # rest = 0
@@ -116,9 +117,6 @@ print(v_a)
 
 
 # Calculate cosine distance:
-
-
-
 
 # for ent in entries:
 #     for element in ent:
