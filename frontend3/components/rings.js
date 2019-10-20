@@ -4,6 +4,8 @@ import { Gyroscope } from 'expo-sensors';
 import { PanGestureHandler, FlingGestureHandler, Directions } from 'react-native-gesture-handler';
 import Ring from '../components/ringClass';
 import Modal from '../components/addClass';
+import { LinearGradient } from 'expo-linear-gradient';
+
 
 
 const {width, height} = Dimensions.get('window');
@@ -45,6 +47,7 @@ export default class Rings extends Component {
     }
 
     componentDidMount(){
+
 
     }
 
@@ -148,12 +151,41 @@ export default class Rings extends Component {
     return (
 
     <Animated.View style={{...styles.container, backgroundColor: bgColor}}>
+    <LinearGradient
+      colors={["rgb(146, 232, 198)", "white",  "white"]}
+      style={{width: "100%", height: "100%"}}
+    >
     <FlingGestureHandler direction={Directions.LEFT} onHandlerStateChange={this.toPage.bind(this)}>
-    <View style={styles.toptouch}></View>
+    <View style={styles.toptouch}>
+      <View style={styles.swipeup}>
+        <Image style={styles.dchv} source={require('./dchev.png')}/>
+        <Text style={styles.supts}>Swipe up to Send & Connect</Text>
+      </View>
+      <View style={styles.tcard}>
+        <Image style={styles.meimg} source={require('./0.jpg')}/>
+        <Text style={styles.btext}>Justin Andrew</Text>
+
+        <View style={styles.maptags}>
+          <View style={styles.talktag}><Text style={{...styles.talktext}}>The Giver</Text></View>
+          <View style={styles.talktag}><Text style={styles.talktext}>Puppies</Text></View>
+          <View style={styles.talktag}><Text style={styles.talktext}>It</Text></View>
+        </View>
+
+        <View style={styles.backpush}>
+          <Text style={styles.biopush}>Born and raised in South Bend, Indiana. Big fan of fishing, eating, and making new friends!</Text>
+        </View>
+
+
+        <View style={styles.shareoptions}>
+
+        </View>
+
+      </View>
+    </View>
     </FlingGestureHandler>
     <FlingGestureHandler direction={Directions.UP} onHandlerStateChange={this.swpUp.bind(this)}>
         <PanGestureHandler minDist={50}  onHandlerStateChange={this.optSwipe.bind(this)}>
-        <View style={styles.lowback}>
+        <View style={{...styles.lowback, opacity: 0}}>
           <Animated.View style={{...styles.dockReady, backgroundColor: bgColor, left: width*0.5-120/2+this.state.offsetBlock, top: lowSize*0.035+topOffset, width: 120, height: 120, borderRadius: 60}}></Animated.View>
           <Ring ref={comp => this.c1 = comp} x={this.state.posVals[0][0]} y={this.state.posVals[0][1]} ballWidth={60} itemOpacity={0.05} logo={require('../components/linkedin-logo.png')} bgcolor={"#0077B5"}/>
           <Ring ref={comp => this.c2 = comp} x={this.state.posVals[1][0]} y={this.state.posVals[1][1]} ballWidth={85} itemOpacity={0.6} logo={require('../components/snapchat.png')} bgcolor={"rgba(255, 251, 0, 0.8);"}/>
@@ -163,12 +195,14 @@ export default class Rings extends Component {
         </View>
         </PanGestureHandler>
     </FlingGestureHandler>
+    </LinearGradient>
     </Animated.View>
     )
 
   }
 
   componentDidMount(){
+
 
 
 
@@ -212,10 +246,40 @@ export default class Rings extends Component {
 
 const styles = StyleSheet.create({
 
+  maptags: {
+      display: "flex",
+      flexDirection: "row",
+      marginLeft: -20,
+      marginTop: 17.5,
+  },
+
+  talktag: {
+      paddingLeft: 20,
+      paddingRight: 20,
+      paddingTop: 12.5,
+      paddingTop: 12.5,
+      backgroundColor: "rgb(146, 232, 198)",
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+      marginTop: 10,
+      borderRadius: 5,
+      marginLeft: 20,
+  },
+
+  talktext: {
+    color: "white",
+    fontWeight: '500',
+    paddingBottom: 12,
+    margin: 0,
+  },
+
   toptouch: {
     width: "100%",
     height: 575,
     position: "absolute",
+
 
   },
 
@@ -234,7 +298,7 @@ const styles = StyleSheet.create({
     zIndex: -1,
     borderColor: "rgba(0,0,0,0.1)",
     borderStyle: "dashed",
-    borderWidth: 2,
+    borderWidth: 0,
 
 
   },
@@ -245,9 +309,94 @@ const styles = StyleSheet.create({
         width: 0,
         height: 0,
       },
-      shadowColor: "#f0ff69",
+      shadowColor: "rgb(46, 232, 198)",
       shadowOpacity: 0.15,
       shadowRadius: 50,
+  },
+
+  tcard: {
+      width: "82%",
+      marginLeft: "8%",
+      height: 400,
+      backgroundColor: "white",
+      position: "absolute",
+      top: 240,
+      shadowColor: "black",
+      shadowOpacity: 0.1,
+      shadowRadius: 5,
+      shadowOffset: {
+        width: 5,
+        height: 5,
+      },
+      borderRadius: 15,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+
+  },
+
+  swipeup: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    opacity: 0.7,
+
+  },
+
+  dchv: {
+      width: 40,
+      height: 40,
+      marginTop: 65,
+      transform: [{
+        rotate: '180deg'
+      }]
+
+  },
+
+  supts: {
+    color: "white",
+    fontSize: 19,
+    marginTop: 17.5,
+    fontWeight: "600",
+
+  },
+
+  meimg: {
+    width: 110,
+    height: 110,
+    borderRadius: 55,
+    marginTop: -55,
+    borderColor: "rgb(146, 232, 198)",
+    borderWidth: 1,
+
+  },
+
+  btext: {
+    fontSize: 28.5,
+    marginTop: 27.5,
+    opacity: 0.2,
+  },
+
+  btextlow: {
+    fontSize: 18.5,
+    marginTop: 25,
+    opacity: 0.45,
+  },
+
+  backpush: {
+    borderLeftWidth: 5,
+    borderLeftColor: "rgba(0,0,0,0.1)",
+    borderRadius: 5,
+    width: "80%",
+    height: 130,
+    backgroundColor: "rgba(0,0,0,0.01)",
+    marginTop: 35,
+  },
+
+  biopush: {
+      marginLeft: 20,
+      marginTop: 20,
+      color: "rgba(0,0,0,0.5)"
   }
 
 });
